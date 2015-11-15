@@ -65,6 +65,7 @@ namespace Camin
     {
         private string nume;
         private List<Student> student;
+        private int nr_locuri;
 
         public void setNume(string nume)
         {
@@ -74,6 +75,16 @@ namespace Camin
         public string getNume()
         {
             return nume;
+        }
+
+        public void setNrlocuri(int nr_locuri)
+        {
+            this.nr_locuri = nr_locuri;
+        }
+
+        public int getNrlocuri()
+        {
+            return nr_locuri;
         }
 
         public AdministratieCamin(string nume)
