@@ -12,7 +12,17 @@ namespace Secretariat_
 
         internal Secretariat()
         {
-            //populeaza lista studenti din baza de date
+        }
+
+        internal void AdaugaStudent(Student stud_)
+        {
+            student.Add(stud_);
+            //adaugare in BD
+        }
+
+        internal void UpdateStudent(Student stud_)
+        {
+            //Se face update in BD pe studentul primit ca parametru
         }
 
         internal float ObtineMediaGeneralaAUnuiStudent(Object s)
