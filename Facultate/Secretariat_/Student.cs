@@ -29,7 +29,7 @@ namespace Secretariat_
             disciplina.Add(new Disciplina(nume_materie, profesor));
         }
 
-        internal float CalculMedieGenerala()
+        internal void CalculMedieGenerala()
         {
             float media_generala = 0;
 
@@ -39,8 +39,8 @@ namespace Secretariat_
                 {
                     media_generala = dis_.nota_finala;
                 }
-            }
-            return (media_generala / disciplina.Count);
+                this.medie_generala = media_generala / disciplina.Count;
+            }            
         }
 
         internal override bool Equals(object obj)

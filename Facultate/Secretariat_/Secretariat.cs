@@ -15,17 +15,32 @@ namespace Secretariat_
             //populeaza lista studenti din baza de date
         }
 
-        internal float CalculeazaMediaGeneralaAStudentilor(Object s)
+        internal float ObtineMediaGeneralaAUnuiStudent(Object s)
         {
             float medie_generala = 0;
             foreach (var stud_ in student)
             {
                 if (stud_.Equals(s))
                 {
-                    medie_generala = stud_.CalculMedieGenerala();
+                    medie_generala = stud_.medie_generala;
                 }
             }
-            return medie_generala;
+            return medie_generala;            
+        }
+
+        internal void ClarificareBursa()
+        {
+            foreach (var stud_ in student)
+            {
+                if (ObtineMediaGeneralaAUnuiStudent(stud_) > 8.00f)
+                {
+                    stud_.bursa = bursier.Da;
+                }
+                else
+                {
+                    stud_.bursa = bursier.Nu;
+                }
+            }
         }
     }
 }

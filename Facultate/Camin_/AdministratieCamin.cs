@@ -19,11 +19,8 @@ namespace Camin_
             this.nume = nume;
             this.nr_locuri = nr_locuri;
             //citire din baza de date pentru studenti
-
-            foreach (var stud_ in student)
-            {
-                stud_.medie =  Secretariat_.Secretariat.CalculeazaMediaGeneralaAStudentilor(stud_);
-            }
+            /*se presupune ca media generala pentru fiecare student este calculata
+            in acest punct */
         }
 
         internal void SortareStudentiDupaMedie()
