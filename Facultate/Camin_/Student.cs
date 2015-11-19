@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace Camin_
 {
-    //ACEST ENUM AR TREBUI DEFINIT CA O CLASA NOUA!
     enum stare { Neinteresat = 0, Interesat, Cazat, Fara_loc };
 
     class Student
     {
-        private string nume { get; internal set; }
-        private string prenume { get; internal set; }
-        private int nr_matricol { get; internal set; }
-        private float medie { get; internal set; }
-        private stare stare { get; internal set; }
+        public string nume { get; internal set; }
+        public string prenume { get; internal set; }
+        public int nr_matricol { get; internal set; }
+        public float medie { get; internal set; }
+        public stare stare { get{ return stare; } internal set; }
 
         internal Student(string nume, string prenume, int nr_matricol, stare stare)
         {

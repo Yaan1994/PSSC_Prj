@@ -8,9 +8,10 @@ namespace Camin_
 {
     class AdministratieCamin
     {
-        private string nume { get; internal set; }
-        private List<Student> student { get; internal set; }
-        private int nr_locuri { get; internal set; }
+        public string nume { get; internal set; }
+        public List<Student> student { get; internal set; }
+        public int nr_locuri { get; internal set; }
+        public int locuri_ocupate { get; internal set; }
 
         internal AdministratieCamin(string nume, int nr_locuri)
         {
@@ -19,6 +20,21 @@ namespace Camin_
             //citire din baza de date pentru studenti            
         }
 
-        //internal void Cazare
+        internal void SortareStudentiDupaMedie()
+        {
+            student.OrderBy(x => x.medie);
+        }
+
+        internal void CazareStudenti()
+        {
+            foreach(var stud_ in student)
+            {
+                if((stud_.stare == stare.Interesat) && (locuri_ocupate < nr_locuri))
+                {
+                    stud_.stare = stare.Cazat;
+                    locuri_ocupate++;
+                }
+            }
+        }
     }
 }
