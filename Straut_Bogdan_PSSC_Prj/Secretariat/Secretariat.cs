@@ -44,16 +44,16 @@ namespace Secretariat
                 {
                     stud_.bursa = bursier.Nu;
                 }
-                AdaugainBD(stud_);
+                AdaugaStudentinBD(stud_);
             }
         }
 
-        public void AdaugainBD(Student stud)
+        public void AdaugaStudentinBD(Student stud)
         {
             //adauga studentul in BD
         }
 
-        public void UpdateStudent(Student stud_)
+        public void UpdateStudentinBD(Student stud_)
         {
             //Se face update in BD pe studentul primit ca parametru
         }
