@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Secretariat
 {
     enum bursier { Nu = 0, Da };
+    enum stareCamin { Neinteresat = 0, Interesat, Cazat, Fara_loc };
 
     class Student
     {
@@ -16,12 +17,14 @@ namespace Secretariat
         public bursier bursa { get; internal set; }
         public float medie_generala { get; internal set; }
         public List<Disciplina> disciplina { get; internal set; }
+        public stareCamin stare { get; internal set; }
 
-        public Student(string nume, string prenume, int nr_matricol)
+        public Student(string nume, string prenume, int nr_matricol, stareCamin stare)
         {
             this.nume = nume;
             this.prenume = prenume;
             this.nr_matricol = nr_matricol;
+            this.stare = stare;
         }
 
         public void InserareMaterie(string nume_materie, int ID_materie)

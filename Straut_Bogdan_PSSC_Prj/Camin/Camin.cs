@@ -43,7 +43,7 @@ namespace Camin
             {
                 if (locuri_ocupate < nr_locuri)
                 {
-                    stud.stare = stare.Cazat;
+                    stud.stare = stareCamin.Cazat;
                     student.Add(stud);                    
                     locuri_ocupate++;
                     confirmare = true;

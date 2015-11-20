@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Camin
 {
-    enum stare { Neinteresat = 0, Interesat, Cazat, Fara_loc };
+    enum stareCamin { Neinteresat = 0, Interesat, Cazat, Fara_loc };
 
     class Student
     {
@@ -15,9 +15,9 @@ namespace Camin
         public string prenume { get; internal set; }
         public int nr_matricol { get; internal set; }
         public float medie { get; internal set; }
-        public stare stare { get { return stare; } internal set; }
+        public stareCamin stare { get { return stare; } internal set; }
 
-        internal Student(string nume, string prenume, int nr_matricol, stare stare)
+        internal Student(string nume, string prenume, int nr_matricol, stareCamin stare)
         {
             this.nume = nume;
             this.prenume = prenume;

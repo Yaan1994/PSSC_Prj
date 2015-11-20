@@ -8,5 +8,37 @@ namespace Facultate
 {
     class Student
     {
+        public string nume { get; internal set; }
+        public string prenume { get; internal set; }
+        public int nr_matricol { get; internal set; }
+        public List<Disciplina> disciplina { get; internal set; }
+
+        public Student(string nume, string prenume, int nr_matricol)
+        {
+            this.nume = nume;
+            this.prenume = prenume;
+            this.nr_matricol = nr_matricol;
+        }
+
+        public Student(int nr_matricol)
+        {
+            this.nr_matricol = nr_matricol;
+        }
+
+        public void InserareMaterie(string nume_materie, int ID_materie)
+        {
+            disciplina.Add(new Disciplina(nume_materie, ID_materie));
+        }
+
+        public bool ConstatareMaterie(int ID_materie)
+        {
+            foreach (var dis in disciplina)
+            {
+                if (dis.ID_materie == ID_materie)
+                    return true;
+            }
+
+            return false;
+        }
     }
 }

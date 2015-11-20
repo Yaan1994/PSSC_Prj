@@ -26,7 +26,7 @@ namespace Camin
             foreach (var c in camin)
             {
                 bool verifica_cazare = false;
-                if (stud.stare == stare.Interesat || stud.stare == stare.Fara_loc)
+                if (stud.stare == stareCamin.Interesat || stud.stare == stareCamin.Fara_loc)
                 {
                     if (c.VerificareMedie(stud))
                     {
