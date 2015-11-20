@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Secretariat
+namespace Facultate
 {
-    class Disciplina
+    class DisciplinaStudent:Disciplina
     {
-        public string nume { get; internal set; }
-        public int ID_materie { get; internal set; }
-        public float nota_activitate { get; internal set; }
-        public float nota_examen { get; internal set; }
+        public float nota_activitate;
+        public float nota_examen;
+        public float nota_finala;
 
-        public Disciplina(string nume, int ID_materie)
+        public DisciplinaStudent(string nume, int ID_materie) : base(nume, ID_materie)
         {
             this.nume = nume;
             this.ID_materie = ID_materie;
@@ -39,9 +38,17 @@ namespace Secretariat
             }
         }
 
-        public void UpdateNumeDisciplina(string nume)
+        public void CalculNotaFinala()
         {
-            this.nume = nume;
+            this.nota_finala = (nota_examen * 2 + nota_activitate) / 3;
+        }
+
+        public float ReturneazaNotaFinala()
+        {
+            if (this.nota_finala == null)
+                return 0;
+            else
+                return this.nota_finala;
         }
     }
 }

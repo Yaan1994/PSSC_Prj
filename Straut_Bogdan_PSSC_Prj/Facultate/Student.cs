@@ -11,7 +11,7 @@ namespace Facultate
         public string nume { get; internal set; }
         public string prenume { get; internal set; }
         public int nr_matricol { get; internal set; }
-        public List<Disciplina> disciplina { get; internal set; }
+        public List<DisciplinaStudent> disciplina { get; internal set; }
 
         public Student(string nume, string prenume, int nr_matricol)
         {
@@ -27,7 +27,7 @@ namespace Facultate
 
         public void InserareMaterie(string nume_materie, int ID_materie)
         {
-            disciplina.Add(new Disciplina(nume_materie, ID_materie));
+            disciplina.Add(new DisciplinaStudent(nume_materie, ID_materie));
         }
 
         public bool ConstatareMaterie(int ID_materie)
@@ -38,6 +38,19 @@ namespace Facultate
                     return true;
             }
 
+            return false;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var student = (Student)obj;
+            if (student != null)
+            {
+                if (student.nr_matricol == this.nr_matricol)
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

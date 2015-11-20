@@ -10,9 +10,6 @@ namespace Facultate
     {
         public string nume;
         public int ID_materie;
-        public float nota_activitate;
-        public float nota_examen;
-        public float nota_finala;
 
         public Disciplina(string nume, int ID_materie)
         {
@@ -20,24 +17,9 @@ namespace Facultate
             this.ID_materie = ID_materie;
         }
 
-        internal void UpdateNotaActivitate(float nota)
+        public void UpdateNumeDisciplina(string nume)
         {
-            this.nota_activitate = nota;
-        }
-
-        internal void UpdateNotaExamen(float nota)
-        {
-            if (this.nota_examen != null)
-            {
-                if (this.nota_examen < nota)
-                {
-                    this.nota_examen = nota;
-                }
-            }
-            else
-            {
-                this.nota_examen = nota;
-            }
+            this.nume = nume;
         }
     }
 }

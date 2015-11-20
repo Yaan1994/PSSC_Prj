@@ -40,7 +40,7 @@ namespace Secretariat
             {
                 foreach (var dis_ in disciplina)
                 {
-                    media_generala = (dis_.nota_examen * 2 + dis_.nota_activitate) / 3;
+                    media_generala += (dis_.nota_examen * 2 + dis_.nota_activitate) / 3;
                 }
                 this.medie_generala = media_generala / disciplina.Count;
             }
