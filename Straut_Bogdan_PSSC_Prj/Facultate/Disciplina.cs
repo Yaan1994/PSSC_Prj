@@ -8,13 +8,18 @@ namespace Facultate
 {
     class Disciplina
     {
-        public string nume;
-        public int ID_materie;
+        public string nume { get; internal set; }
+        public int ID_materie { get; internal set; }
 
         public Disciplina(string nume, int ID_materie)
         {
             this.nume = nume;
             this.ID_materie = ID_materie;
+        }
+
+        public int GetID_materie()
+        {
+            return this.ID_materie;
         }
 
         public void UpdateNumeDisciplina(string nume)

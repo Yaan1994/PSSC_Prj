@@ -27,9 +27,27 @@ namespace Facultate
             profesor.Add(prof);
         }
 
-        public void CalculeazaNoteleFinaleAleStudentilor()
+        public void CalculeazaNotaFinala()
         {
-
+            foreach (var s in student)
+            {
+                foreach (var prof in profesor)
+                {
+                    foreach (var disc in prof.disciplina)
+                    {
+                        if(s.ConstatareMaterie(disc.ID_materie))
+                        {
+                            foreach (var stud_ in prof.student)
+                            {
+                                if (stud_.Equals(s))
+                                {
+                                    s.CalculeazaNotaFinalaPtOMaterie(disc.ID_materie);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

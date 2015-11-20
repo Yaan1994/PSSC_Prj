@@ -30,6 +30,17 @@ namespace Facultate
             disciplina.Add(new DisciplinaStudent(nume_materie, ID_materie));
         }
 
+        public void CalculeazaNotaFinalaPtOMaterie(int ID_materie)
+        {
+            foreach (var disc in disciplina)
+            {
+                if (disc.GetID_materie() == ID_materie)
+                {
+                    disc.CalculNotaFinala();
+                }
+            }
+        }
+
         public bool ConstatareMaterie(int ID_materie)
         {
             foreach (var dis in disciplina)
