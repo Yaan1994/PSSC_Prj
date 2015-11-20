@@ -10,22 +10,16 @@ namespace Secretariat
     {
         public List<Student> student { get; internal set; }
 
-        internal Secretariat()
+        public Secretariat()
         {
         }
 
-        internal void AdaugaStudent(Student stud_)
+        public void AdaugaStudent(Student stud_)
         {
             student.Add(stud_);
-            //adaugare in BD
         }
 
-        internal void UpdateStudent(Student stud_)
-        {
-            //Se face update in BD pe studentul primit ca parametru
-        }
-
-        internal float ObtineMediaGeneralaAUnuiStudent(Object s)
+        public float ObtineMediaGeneralaAUnuiStudent(Object s)
         {
             float medie_generala = 0;
             foreach (var stud_ in student)
@@ -38,7 +32,7 @@ namespace Secretariat
             return medie_generala;
         }
 
-        internal void ClarificareBursa()
+        public void ClarificareBursa()
         {
             foreach (var stud_ in student)
             {
@@ -50,7 +44,18 @@ namespace Secretariat
                 {
                     stud_.bursa = bursier.Nu;
                 }
+                AdaugainBD(stud_);
             }
+        }
+
+        public void AdaugainBD(Student stud)
+        {
+            //adauga studentul in BD
+        }
+
+        public void UpdateStudent(Student stud_)
+        {
+            //Se face update in BD pe studentul primit ca parametru
         }
     }
 }

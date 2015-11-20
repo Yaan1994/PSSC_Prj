@@ -9,15 +9,14 @@ namespace Secretariat
     class Disciplina
     {
         public string nume { get; internal set; }
-        public Profesor profesor { get; internal set; }
+        public int ID_materie { get; internal set; }
         public float nota_activitate { get; internal set; }
         public float nota_examen { get; internal set; }
-        public float nota_finala { get; set { nota_finala = (nota_activitate * 2 + nota_examen) / 3; } }
 
-        internal Disciplina(string nume, Profesor profesor)
+        internal Disciplina(string nume, int ID_materie)
         {
             this.nume = nume;
-            this.profesor = profesor;
+            this.ID_materie = ID_materie;
         }
 
         internal void UpdateNotaActivitate(float nota)

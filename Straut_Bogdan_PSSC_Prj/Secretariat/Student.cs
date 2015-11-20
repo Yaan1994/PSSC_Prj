@@ -17,19 +17,19 @@ namespace Secretariat
         public float medie_generala { get; internal set; }
         public List<Disciplina> disciplina { get; internal set; }
 
-        internal Student(string nume, string prenume, int nr_matricol)
+        public Student(string nume, string prenume, int nr_matricol)
         {
             this.nume = nume;
             this.prenume = prenume;
             this.nr_matricol = nr_matricol;
         }
 
-        public void InserareMaterie(string nume_materie, Profesor profesor)
+        public void InserareMaterie(string nume_materie, int ID_materie)
         {
-            disciplina.Add(new Disciplina(nume_materie, profesor));
+            disciplina.Add(new Disciplina(nume_materie, ID_materie));
         }
 
-        internal void CalculMedieGenerala()
+        public void CalculMedieGenerala()
         {
             float media_generala = 0;
 
@@ -37,13 +37,13 @@ namespace Secretariat
             {
                 foreach (var dis_ in disciplina)
                 {
-                    media_generala = dis_.nota_finala;
+                    media_generala = (dis_.nota_examen * 2 + dis_.nota_activitate) / 3;
                 }
                 this.medie_generala = media_generala / disciplina.Count;
             }
         }
 
-        internal override bool Equals(object obj)
+        public override bool Equals(object obj)
         {
             var student = (Student)obj;
             if (student != null)
