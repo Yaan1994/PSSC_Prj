@@ -8,33 +8,38 @@ namespace Camin
 {
     class AdministratieCamin
     {
-        public string nume { get; internal set; }
-        public List<Student> student { get; internal set; }
-        public int nr_locuri { get; internal set; }
-        public int locuri_ocupate { get; internal set; }
+        public List<Camin> camin { get; internal set; }
 
-        internal AdministratieCamin(string nume, int nr_locuri)
+        internal AdministratieCamin()
         {
-            this.nume = nume;
-            this.nr_locuri = nr_locuri;
-            //citire din baza de date pentru studenti
             /*se presupune ca media generala pentru fiecare student este calculata
             in acest punct */
         }
 
-        internal void SortareStudentiDupaMedie()
+        internal void AdaugaCamin(string nume, int nr_locuri, float medie_de_intrare)
         {
-            student.OrderBy(x => x.medie);
+            camin.Add(new Camin(nume, nr_locuri, medie_de_intrare));
         }
 
-        internal void CazareStudenti()
+        internal void Cazare(Student stud)
         {
-            foreach (var stud_ in student)
+            foreach (var c in camin)
             {
-                if ((stud_.stare == stare.Interesat) && (locuri_ocupate < nr_locuri))
+                bool verifica_cazare = false;
+                if (stud.stare == stare.Interesat || stud.stare == stare.Fara_loc)
                 {
-                    stud_.stare = stare.Cazat;
-                    locuri_ocupate++;
+                    if (c.VerificareMedie(stud))
+                    {
+                        if (c.CazareStudentInCamin(stud))
+                        {
+                            verifica_cazare = true;
+                        }
+                    }
+                }
+
+                if (verifica_cazare == true)
+                {
+                    break;
                 }
             }
         }

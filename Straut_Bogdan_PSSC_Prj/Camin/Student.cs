@@ -23,10 +23,10 @@ namespace Camin
             this.prenume = prenume;
             this.nr_matricol = nr_matricol;
             this.stare = stare;
-            //apeleaza secretariat pentru medie
+            //preia media pt fiecare student din BD pe baza nr matricol
         }
 
-        internal override bool Equals(object obj)
+        public override bool Equals(object obj)
         {
             var student = (Student)obj;
             if (student != null)
