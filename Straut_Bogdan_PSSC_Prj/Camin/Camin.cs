@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Camin
 {
-    class Camin
+    public class Camin
     {
         public string nume { get; internal set; }
         public List<Student> student { get; internal set; }

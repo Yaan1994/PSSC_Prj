@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Secretariat;
 
 namespace Facultate
 {
-    class Facultate
+    public class Facultate
     {
         public string nume { get; internal set; }
         public List<Profesor> profesor { get; internal set; }
         public List<StudentFacultate> student { get; internal set; }
+
+        public Secretariat.Secretariat secretariat;
 
         public Facultate(string nume)
         {
