@@ -26,5 +26,18 @@ namespace Facultate
         {
             this.nume = nume;
         }
+
+        public override bool Equals(object obj)
+        {
+            var disciplina = (Disciplina)obj;
+            if (disciplina != null)
+            {
+                if (disciplina.GetID_materie() == this.GetID_materie())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

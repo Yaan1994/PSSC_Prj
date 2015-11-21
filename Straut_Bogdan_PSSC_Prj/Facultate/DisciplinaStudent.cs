@@ -14,8 +14,6 @@ namespace Facultate
 
         public DisciplinaStudent(string nume, int ID_materie) : base(nume, ID_materie)
         {
-            this.nume = nume;
-            this.ID_materie = ID_materie;
         }
 
         public void UpdateNotaActivitate(float nota)
@@ -43,7 +41,7 @@ namespace Facultate
             this.nota_finala = (nota_examen * 2 + nota_activitate) / 3;
         }
 
-        public float ReturneazaNotaFinala()
+        public float GetNotaFinala()
         {
             if (this.nota_finala == null)
                 return 0;
