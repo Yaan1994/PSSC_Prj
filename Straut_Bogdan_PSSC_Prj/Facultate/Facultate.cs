@@ -104,5 +104,15 @@ namespace Facultate
                                         ds.CalculNotaFinala();
                                     }
         }
+
+        public void UpdateBD()
+        {
+            //update database with the new data for students
+        }
+
+        public void InsertBD()
+        {
+            //insert into database the data for students
+        }
     }
 }

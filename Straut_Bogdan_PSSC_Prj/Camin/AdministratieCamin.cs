@@ -21,6 +21,42 @@ namespace Camin
             camin.Add(new Camin(nume, nr_locuri, medie_de_intrare));
         }
 
+        public bool FindCamin(Camin Cam)
+        {
+            foreach (var c in camin)
+            {
+                if (c.Equals(Cam))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool AddCamin(Camin Cam)
+        {
+            if (FindCamin(Cam))
+            {
+                return false;
+            }
+            else
+            {
+                camin.Add(Cam);
+                return true;
+            }
+        }
+
+        public bool RemoveCamin(Camin Cam)
+        {
+            if (FindCamin(Cam))
+            {
+                camin.Remove(Cam);
+                return true;
+            }
+            else
+                return false;
+        }
+
         internal void Cazare(Student stud)
         {
             foreach (var c in camin)

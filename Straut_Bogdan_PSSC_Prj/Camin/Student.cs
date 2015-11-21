@@ -17,13 +17,27 @@ namespace Camin
         public float medie { get; internal set; }
         public stareCamin stare { get { return stare; } internal set; }
 
-        internal Student(string nume, string prenume, int nr_matricol, stareCamin stare)
+        public Student(string nume, string prenume, int nr_matricol, stareCamin stare)
         {
             this.nume = nume;
             this.prenume = prenume;
             this.nr_matricol = nr_matricol;
             this.stare = stare;
-            //preia media pt fiecare student din BD pe baza nr matricol
+        }
+
+        public Student(int nr_matricol)
+        {
+            this.nr_matricol = nr_matricol;
+        }
+
+        public int GetIdentificator()
+        {
+            return this.nr_matricol;
+        }
+
+        public void GetMedieFromBD()
+        {
+            //preia media pentru student din BD
         }
 
         public override bool Equals(object obj)

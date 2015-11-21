@@ -21,6 +21,16 @@ namespace Camin
             this.medie_de_intrare = medie_de_intrare;
         }
 
+        public void UpdateNr_locuri(int nr_locuri)
+        {
+            this.nr_locuri = nr_locuri;
+        }
+
+        public void UpdateMedie_de_intrare(float medie_de_intrare)
+        {
+            this.medie_de_intrare = medie_de_intrare;
+        }
+
         public bool VerificareMedie(Student stud)
         {
             if (stud.medie > medie_de_intrare)
@@ -55,6 +65,42 @@ namespace Camin
             }
 
             return confirmare;
+        }
+
+        public bool FindStudent(Student stud)
+        {
+            foreach (var s in student)
+            {
+                if (s.Equals(stud))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool AddStudent(Student stud)
+        {
+            if (FindStudent(stud))
+            {
+                return false;
+            }
+            else
+            {
+                student.Add(stud);
+                return true;
+            }
+        }
+
+        public bool RemoveStudent(Student stud)
+        {
+            if (FindStudent(stud))
+            {
+                student.Remove(stud);
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

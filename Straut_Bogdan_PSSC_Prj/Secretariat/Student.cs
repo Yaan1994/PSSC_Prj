@@ -27,23 +27,86 @@ namespace Secretariat
             this.stare = stare;
         }
 
-        public void InserareMaterie(string nume_materie, int ID_materie)
+        public void UpdateMedie_generala(float medie_generala)
         {
-            disciplina.Add(new Disciplina(nume_materie, ID_materie));
+            this.medie_generala = medie_generala;
         }
 
-        public void CalculMedieGenerala()
+        public float GetMedie_generala()
         {
-            float media_generala = 0;
+            return this.medie_generala;
+        }
+
+        public void UpdateBursa(bursier bursa)
+        {
+            this.bursa = bursa;
+        }
+
+        public bursier GetBursa()
+        {
+            return this.bursa;
+        }
+
+        public stareCamin Getstarecamin()
+        {
+            return this.stare;
+        }
+
+        public void Updatestare(stareCamin stare)
+        {
+            this.stare = stare;
+        }
+
+        public float CalculMedieGenerala()
+        {
+            float medie = 0;
 
             if (disciplina != null)
             {
                 foreach (var dis_ in disciplina)
                 {
-                    media_generala += (dis_.nota_examen * 2 + dis_.nota_activitate) / 3;
+                    medie += (dis_.GetNota_examen() * 2 + dis_.GetNota_activitate()) / 3;
                 }
-                this.medie_generala = media_generala / disciplina.Count;
+                medie = medie / disciplina.Count;
             }
+
+            return medie;
+        }
+
+        public bool FindDisciplina(Disciplina disc)
+        {
+            foreach (var d in disciplina)
+            {
+                if (d.Equals(disc))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool AddDisciplina(Disciplina disc)
+        {
+            if (FindDisciplina(disc))
+            {
+                return false;
+            }
+            else
+            {
+                disciplina.Add(disc);
+                return true;
+            }
+        }
+
+        public bool RemoveDisciplina(Disciplina disc)
+        {
+            if (FindDisciplina(disc))
+            {
+                disciplina.Remove(disc);
+                return true;
+            }
+            else
+                return false;
         }
 
         public override bool Equals(object obj)

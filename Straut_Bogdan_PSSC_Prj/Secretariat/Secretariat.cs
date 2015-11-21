@@ -14,19 +14,63 @@ namespace Secretariat
         {
         }
 
-        public void AdaugaStudent(Student stud_)
+        public bool FindStudent(Student stud)
         {
-            student.Add(stud_);
+            foreach (var s in student)
+            {
+                if (s.Equals(stud))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
-        public float ObtineMediaGeneralaAUnuiStudent(Object s)
+        public bool AddStudent(Student stud)
+        {
+            if (FindStudent(stud))
+            {
+                return false;
+            }
+            else
+            {
+                student.Add(stud);
+                return true;
+            }
+        }
+
+        public bool RemoveStudent(Student stud)
+        {
+            if (FindStudent(stud))
+            {
+                student.Remove(stud);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public void CalculMedieGenerala()
+        {
+            foreach (var s in student)
+            {
+                float medie = 0;
+                foreach (var d in s.disciplina)
+                {
+                    medie += (d.GetNota_examen() * 2 + d.GetNota_activitate()) / 3;
+                }
+                s.UpdateMedie_generala(medie);
+            }
+        }       
+
+        public float ObtineMediaGeneralaAUnuiStudent(Student s)
         {
             float medie_generala = 0;
             foreach (var stud_ in student)
             {
                 if (stud_.Equals(s))
                 {
-                    medie_generala = stud_.medie_generala;
+                    medie_generala = stud_.GetMedie_generala();
                 }
             }
             return medie_generala;
@@ -38,11 +82,11 @@ namespace Secretariat
             {
                 if (ObtineMediaGeneralaAUnuiStudent(stud_) > 8.00f)
                 {
-                    stud_.bursa = bursier.Da;
+                    stud_.UpdateBursa(bursier.Da);
                 }
                 else
                 {
-                    stud_.bursa = bursier.Nu;
+                    stud_.UpdateBursa(bursier.Nu);
                 }
                 AdaugaStudentinBD(stud_);
             }
