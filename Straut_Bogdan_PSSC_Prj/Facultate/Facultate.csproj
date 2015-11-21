@@ -39,8 +39,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Disciplina.cs" />
+    <Compile Include="DisciplinaProfesor.cs" />
+    <Compile Include="DisciplinaStudent.cs" />
     <Compile Include="Facultate.cs" />
+    <Compile Include="Profesor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentFacultate.cs" />
+    <Compile Include="StudentProfesor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Secretariat\Secretariat.csproj">
+      <Project>{de603201-ccc6-4ce1-804e-4e4ecb2b93fe}</Project>
+      <Name>Secretariat</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

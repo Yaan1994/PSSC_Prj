@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Secretariat
 {
-    enum bursier { Nu = 0, Da };
-    enum stareCamin { Neinteresat = 0, Interesat, Cazat, Fara_loc };
+    public enum bursier { Nu = 0, Da };
+    public enum stareCamin { Neinteresat = 0, Interesat, Cazat, Fara_loc };
 
-    class Student
+    public class Student
     {
         public string nume { get; internal set; }
         public string prenume { get; internal set; }

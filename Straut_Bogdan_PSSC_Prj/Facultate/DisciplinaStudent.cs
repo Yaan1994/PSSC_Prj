@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Facultate
 {
-    class DisciplinaStudent:Disciplina
+    public class DisciplinaStudent:Disciplina
     {
         public float nota_activitate;
         public float nota_examen;

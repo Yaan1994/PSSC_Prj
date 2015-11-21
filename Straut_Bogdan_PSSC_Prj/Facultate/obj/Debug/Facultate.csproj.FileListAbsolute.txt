@@ -1,0 +1,7 @@
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Facultate\obj\Debug\Facultate.csprojResolveAssemblyReference.cache
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Facultate\bin\Debug\Facultate.dll
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Facultate\bin\Debug\Facultate.pdb
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Facultate\bin\Debug\Secretariat.dll
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Facultate\bin\Debug\Secretariat.pdb
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Facultate\obj\Debug\Facultate.dll
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Facultate\obj\Debug\Facultate.pdb

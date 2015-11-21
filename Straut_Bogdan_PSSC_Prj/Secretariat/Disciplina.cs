@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Secretariat
 {
-    class Disciplina
+    public class Disciplina
     {
         public string nume { get; internal set; }
         public int ID_materie { get; internal set; }

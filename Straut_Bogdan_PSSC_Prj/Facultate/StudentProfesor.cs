@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace Facultate
 {
-    class StudentProfesor:Student
+    public class StudentProfesor:Student
     {
         public float nota_activitate { get; internal set; }
         public float nota_examen { get; internal set; }
+
+        public StudentProfesor(int nr_matricol)
+            : base(nr_matricol)
+        {
+
+        }
 
         public void UpdateNotaActivitate(float nota_activitate)
         {

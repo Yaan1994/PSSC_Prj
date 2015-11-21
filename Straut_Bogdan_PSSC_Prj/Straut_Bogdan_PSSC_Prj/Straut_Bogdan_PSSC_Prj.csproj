@@ -47,6 +47,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Camin\Camin.csproj">
+      <Project>{e3dbd701-8ba9-47ab-989e-ccc21fd9a0d2}</Project>
+      <Name>Camin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Facultate\Facultate.csproj">
+      <Project>{8987258d-c350-4cf7-8ae6-57c1e1a96d3d}</Project>
+      <Name>Facultate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Secretariat\Secretariat.csproj">
+      <Project>{de603201-ccc6-4ce1-804e-4e4ecb2b93fe}</Project>
+      <Name>Secretariat</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

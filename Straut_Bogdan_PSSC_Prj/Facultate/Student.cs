@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Facultate
 {
-    class Student
+    public class Student
     {
         public int nr_matricol { get; internal set; }
         

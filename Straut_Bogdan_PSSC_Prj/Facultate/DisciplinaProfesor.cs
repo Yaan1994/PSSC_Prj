@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Facultate
 {
-    class DisciplinaProfesor:Disciplina
+    public class DisciplinaProfesor:Disciplina
     {
         public List<StudentProfesor> student { get; internal set;}
 

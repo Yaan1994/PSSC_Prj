@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Camin
 {
-    enum stareCamin { Neinteresat = 0, Interesat, Cazat, Fara_loc };
+    public enum stareCamin { Neinteresat = 0, Interesat, Cazat, Fara_loc };
 
-    class Student
+    public class Student
     {
         public string nume { get; internal set; }
         public string prenume { get; internal set; }
         public int nr_matricol { get; internal set; }
         public float medie { get; internal set; }
-        public stareCamin stare { get { return stare; } internal set; }
+        public stareCamin stare { get; internal set; }
 
         public Student(string nume, string prenume, int nr_matricol, stareCamin stare)
         {

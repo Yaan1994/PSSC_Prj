@@ -1,0 +1,5 @@
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Camin\obj\Debug\Camin.csprojResolveAssemblyReference.cache
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Camin\bin\Debug\Camin.dll
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Camin\bin\Debug\Camin.pdb
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Camin\obj\Debug\Camin.dll
+E:\PSSC_Prj1\PSSC_Prj\Straut_Bogdan_PSSC_Prj\Camin\obj\Debug\Camin.pdb
